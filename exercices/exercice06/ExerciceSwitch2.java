@@ -14,7 +14,20 @@ public class ExerciceSwitch2 {
          }
          else if (age>11) {
             System.out.println("Inconnu");
-            
+        }
+
+        switch (age) {
+            case 6:
+                System.out.println("Poussin");
+                break;
+            case 7 & 8:
+                System.out.println("Pupille");
+                break;
+            case 10 & 11 :
+                System.out.println("Minime");
+            default:
+                System.out.println("Inconnu");
+                break;
         }
     }
 }
