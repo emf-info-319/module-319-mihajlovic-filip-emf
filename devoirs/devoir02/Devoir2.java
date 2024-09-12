@@ -11,6 +11,7 @@ public class Devoir2 {
 
         do{
             reservoirA = reservoirA + remplissage;
+            
         }
         while ( reservoirA <=CAPACITE_RESERVOIR_A);
     }
