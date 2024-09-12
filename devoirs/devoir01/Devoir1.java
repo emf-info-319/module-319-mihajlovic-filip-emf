@@ -3,16 +3,23 @@ package devoirs.devoir01;
 public class Devoir1 {
     public static void main(String[] args) {
         int monAge = 30;
-        int estMajeur = 20;
+        boolean estMajeur;
 
         System.out.println("Je m'appelle MIHAJLOVIC Filip");
         System.out.println("Mon age est de : " + monAge + " ans");
 
-        if (monAge>=estMajeur) {
-            System.out.println("Est majeur");
+        if (monAge>=20) {
+            estMajeur = true;
         }
         else {
-            System.out.println("Je ne suis pas encore majeur");
+            estMajeur=false;
+        }
+        if (estMajeur==true) {
+            System.out.println("Je suis majeur");
+        }
+        else {
+            System.out.println("Je suis Mineur");
         }
     }
+    
 }
