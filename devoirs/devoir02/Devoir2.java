@@ -7,12 +7,13 @@ public class Devoir2 {
     public static void main(String[] args) {
         int reservoirA = 0;
         int reservoirB = 0;
-        int remplissage = (int)(Math.random()*(5-0+1))+0;
+        int remplissage = (int)(Math.random()*(8-1+1))+0;
 
-        do{
+        while ( reservoirA <=CAPACITE_RESERVOIR_A){
             reservoirA = reservoirA + remplissage;
-            
+            System.out.println("le reservoir a est rempli de " );
         }
-        while ( reservoirA <=CAPACITE_RESERVOIR_A);
+        
+        
     }
 }
