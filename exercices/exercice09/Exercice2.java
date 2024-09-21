@@ -1,4 +1,4 @@
-package exercices.exercice09;
+
 
 public class Exercice2 {
     public final static int MIN = 1;
