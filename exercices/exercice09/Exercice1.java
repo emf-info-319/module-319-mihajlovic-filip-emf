@@ -1,5 +1,4 @@
 
-
 public class Exercice1 {
     public static void main(String[] args) {
         int[] tableauEntiers ; //déclaration du tableau

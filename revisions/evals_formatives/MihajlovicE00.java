@@ -16,18 +16,16 @@ public class MihajlovicE00 {
             if (scoreEquipe1>scoreEquipe2) {
                 System.out.println(nomEquipe1 + " a gagné");
                 nombrePointsEquipe1 = nombrePointsEquipe1 + NOMBRE_DE_POINTS;
-            }
-            if (scoreEquipe2>scoreEquipe1) {
+            }else if (scoreEquipe2>scoreEquipe1) {
                 System.out.println(nomEquipe1 + " a gagné");
                 nombrePointsEquipe2 = nombrePointsEquipe2 + NOMBRE_DE_POINTS;
-            } if(scoreEquipe1==scoreEquipe2) {
+            } else {
                 System.out.println("Match nul !");
                 nombrePointsEquipe2++;
                 nombrePointsEquipe1++;
             }
         }
-        System.out.println(nomEquipe1 + " a " + nombrePointsEquipe1);
-        System.out.println(nomEquipe2 + " a " + nombrePointsEquipe2);
-        
+        System.out.println(nomEquipe1 + " a " + nombrePointsEquipe1 + " points");
+        System.out.println(nomEquipe2 + " a " + nombrePointsEquipe2 + " points");
     }
 }

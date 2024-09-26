@@ -6,10 +6,11 @@ public class Exercice4 {
         tableau = new int[5];
 
         int num = (int) (Math.random() * ( MAX - MIN + 1 )) + MIN;
-
+        
         for (int i = 0; i < tableau.length; i++) {
             num++;
-            System.out.println("Cellule " + i + " : " + num);
+            tableau[i] = num;
+            System.out.println("Cellule " + i + " : " + tableau[i]);
         }
 
      }
