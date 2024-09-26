@@ -1,4 +1,4 @@
-package devoirs.devoir02;
+
 
 public class Devoir2 {
 
