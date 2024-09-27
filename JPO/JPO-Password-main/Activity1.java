@@ -13,10 +13,20 @@ public class Activity1 {
          * Testez votre application en affichant un SOUT pour chaque password essayé et retestez sans ce SOUT. Voyez vous une différence ?
          */
 
+            for (int j = 0; j < PASSWORDS.length; j++) {
+                boolean test = testPassword(PASSWORDS[j]);
+              if (test) {
+                System.out.println(PASSWORDS[j]);
+                break;
+              }
+            }
+            
+        
 
 
 
-    }
+
+        }
 
      public static boolean testPassword(String passwordToTest) {
         boolean retour = false;
