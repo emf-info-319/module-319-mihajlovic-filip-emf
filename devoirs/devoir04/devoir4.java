@@ -1,4 +1,4 @@
-public class devour4 {
+public class devoir4 {
     public final static int MAX_DAYS = 31;
     public final static int MAX_MONTH = 12;
     public final static int MAX_YEARS = 9999;
