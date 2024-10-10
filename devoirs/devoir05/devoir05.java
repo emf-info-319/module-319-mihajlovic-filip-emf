@@ -24,9 +24,9 @@ public class devoir05 {
                 System.out.println("trop petit !");
             }
             System.out.print("réessayer : ");
-                valeur = scanner.nextInt();
+            valeur = scanner.nextInt();
         }
-            System.out.println("Bien joué, tu a enfin trouvé!");
+        System.out.println("Bien joué, tu a enfin trouvé!");
         // On referme le scanner à la fin du programme
         scanner.close();
     }
