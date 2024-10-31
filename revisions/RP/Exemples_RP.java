@@ -1,4 +1,4 @@
-package revisions;
+package revisions.RP;
 
 public class Exemples_RP {
     public final static int MAX = 100;
