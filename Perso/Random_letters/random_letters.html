@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random letters generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Random letters generator</h1>
+
+    <!-- Bouton pour générer une lettre -->
+    <button onclick="genererLettre()">Click to generate</button>
+
+    <!-- Emplacement où la lettre générée sera affichée -->
+    <div id="lettre">-</div>
+
+    <script>
+        function genererLettre() {
+            // Générer une lettre majuscule aléatoire entre 'A' et 'Z'
+            const lettres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const lettreAleatoire = lettres[Math.floor(Math.random() * lettres.length)];
+
+            // Afficher la lettre dans la div
+            document.getElementById('lettre').textContent = lettreAleatoire;
+        }
+    </script>
+
+</body>
+</html>
