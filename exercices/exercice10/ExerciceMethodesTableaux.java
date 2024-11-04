@@ -40,7 +40,7 @@ public class ExerciceMethodesTableaux {
             System.out.println("La valeur " + NOMBRE_A_TROUVER + "à été trouvée pour la dernier fois en position N°" + dernierApparition);
         }
         else if (premierApparition == dernierApparition) {
-            System.out.println("La valeur " + NOMBRE_A_TROUVER + "n'a été touvée qu'une seule fois en position N°" + premierApparition);
+            System.out.println("La valeur " + NOMBRE_A_TROUVER + " n'a été touvée qu'une seule fois en position N°" + premierApparition);
         }
 
 
