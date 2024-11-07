@@ -1,3 +1,5 @@
+package devoirs.devoir05;
+
 import java.util.Scanner;
 
 /**
@@ -14,7 +16,7 @@ public class devoir05 {
         Scanner scanner = new Scanner(System.in);
         // Voici comment lire un entier depuis la console
         System.out.print("Tente de découvrir le nombre auquel je pense : ");
-        int valeur = scanner.nextInt();
+         int valeur = scanner.nextInt();
         scanner.nextLine(); // pour ignorer la touche RETURN
         // On continue à utiliser le scanner dans le programme…
         while (num != valeur) {
