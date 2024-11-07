@@ -1,0 +1,25 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+    margin-left: 2em;
+
+}
+
+button{
+    background-color: rgb(0, 94, 255);
+    color: antiquewhite;
+    font-size: 3em;
+    margin-left: 5em;
+}
+
+div{
+    font-size: 10em;
+    margin-right: auto;
+    margin-left: 2.35em;
+    margin-top: 0.3em;
+
+}
+
+h1{
+    margin-left: 7em;
+}
