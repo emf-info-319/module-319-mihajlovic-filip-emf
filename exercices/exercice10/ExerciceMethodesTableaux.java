@@ -1,10 +1,10 @@
 public class ExerciceMethodesTableaux {
     public final static int MIN = 1;
     public final static int MAX = 100;
-    public final static int TAB_LENGTH = (int) (Math.random() * ( MAX - MIN + 1 )) + MIN;
-    public final static int VALEUR_A_REMPLACER = (int) (Math.random() * ( MAX - MIN + 1 )) + MIN;
-    public final static int VALEUR_DE_REMPLACEMENT = (int) (Math.random() * ( MAX - MIN + 1 )) + MIN;
-    public final static int NOMBRE_A_TROUVER = (int) (Math.random() * ( MAX - MIN + 1 )) + MIN;
+    public final static int TAB_LENGTH = (int) (Math.random() * (MAX - MIN + 1)) + MIN;
+    public final static int VALEUR_A_REMPLACER = (int) (Math.random() * (MAX - MIN + 1)) + MIN;
+    public final static int VALEUR_DE_REMPLACEMENT = (int) (Math.random() * (MAX - MIN + 1)) + MIN;
+    public final static int NOMBRE_A_TROUVER = (int) (Math.random() * (MAX - MIN + 1)) + MIN;
 
     public static void main(String[] args) {
 
@@ -21,11 +21,12 @@ public class ExerciceMethodesTableaux {
         System.out.println("La valeur maximum trouvée = " + max);
 
         tab = remplacerValeurTableau(tab, VALEUR_A_REMPLACER, VALEUR_DE_REMPLACEMENT);
-        System.out.println("\n\nAprès remplacement de la valeur " + VALEUR_A_REMPLACER + " par la valeur " + VALEUR_DE_REMPLACEMENT + " voici le contenu du tableau");
+        System.out.println("\n\nAprès remplacement de la valeur " + VALEUR_A_REMPLACER + " par la valeur "
+                + VALEUR_DE_REMPLACEMENT + " voici le contenu du tableau");
         affichageContenuTableau(tab);
 
         int somme = calculerSommeTableau(tab);
-        int moyenne = calculerMoyenneTableau(tab);
+        double moyenne = calculerMoyenneTableau(tab);
         System.out.println("\n\nLa somme des cellules du tableau = " + somme);
         System.out.println("La moyenne des cellules du tableau = " + moyenne);
 
@@ -33,16 +34,16 @@ public class ExerciceMethodesTableaux {
         int dernierApparition = calculrerDernierApparitionNombres(tab, NOMBRE_A_TROUVER);
 
         if (premierApparition == -1) {
-            System.out.println("Le nombre " +  NOMBRE_A_TROUVER + " n'apparait pas dans le tableau");
+            System.out.println("Le nombre " + NOMBRE_A_TROUVER + " n'apparait pas dans le tableau");
+        } else if (premierApparition != dernierApparition) {
+            System.out.println("La valeur " + NOMBRE_A_TROUVER + "à été trouvée pour la 1ère fois en position N°"
+                    + premierApparition);
+            System.out.println("La valeur " + NOMBRE_A_TROUVER + "à été trouvée pour la dernier fois en position N°"
+                    + dernierApparition);
+        } else if (premierApparition == dernierApparition) {
+            System.out.println("La valeur " + NOMBRE_A_TROUVER + " n'a été touvée qu'une seule fois en position N°"
+                    + premierApparition);
         }
-        else if (premierApparition != dernierApparition) {
-            System.out.println("La valeur " + NOMBRE_A_TROUVER + "à été trouvée pour la 1ère fois en position N°" + premierApparition);
-            System.out.println("La valeur " + NOMBRE_A_TROUVER + "à été trouvée pour la dernier fois en position N°" + dernierApparition);
-        }
-        else if (premierApparition == dernierApparition) {
-            System.out.println("La valeur " + NOMBRE_A_TROUVER + " n'a été touvée qu'une seule fois en position N°" + premierApparition);
-        }
-
 
     }
 
@@ -76,7 +77,7 @@ public class ExerciceMethodesTableaux {
 
     // ex5
     public static void affichageContenuTableau(int[] tab) {
-        System.out.println("Contenu du tableau aléatoire : :");
+        System.out.println("Contenu du tableau aléatoire :");
         for (int i = 0; i < tab.length; i++) {
             System.out.println("tab[" + i + "]=" + tab[i]);
         }
@@ -106,13 +107,13 @@ public class ExerciceMethodesTableaux {
 
     // ex8
     public static int calculerFrequanceNombre(int[] tab, int value) {
-        int nombreFréquance = 0;
+        int nombreFrequance = 0;
         for (int i = 0; i < tab.length; i++) {
             if (tab[i] == value) {
-                nombreFréquance++;
+                nombreFrequance++;
             }
         }
-        return nombreFréquance;
+        return nombreFrequance;
     }
 
     // ex9
@@ -125,12 +126,12 @@ public class ExerciceMethodesTableaux {
     }
 
     // ex10
-    public static int calculerMoyenneTableau(int[] tab) {
+    public static double calculerMoyenneTableau(int[] tab) {
         int somme = 0;
         for (int i = 0; i < tab.length; i++) {
             somme += tab[i];
         }
-        int moyenne = somme / tab.length;
+        double moyenne = (double) somme / tab.length;
         return moyenne;
     }
 
@@ -146,12 +147,13 @@ public class ExerciceMethodesTableaux {
 
     // ex12
     public static int calculerPremierApparitionNombre(int[] tab, int valueToSearch) {
+        int position = -1;
         for (int i = 0; i < tab.length; i++) {
             if (tab[i] == valueToSearch) {
-                return i;
+                position = i;
             }
         }
-        return -1;
+        return position;
     }
 
     // ex13
