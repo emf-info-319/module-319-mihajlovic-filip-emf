@@ -24,7 +24,7 @@ public class ExerciceInversionTableau {
     public static int[] inverseTableau(int[] tab) {
         int[] revertedTab = new int[tab.length];
         for (int i = 0; i < tab.length; i++) {
-            revertedTab[tab.length - 1 - i] = tab[i];
+            revertedTab[i] = tab[tab.length - 1 - i];
         }
         return revertedTab;
     }
