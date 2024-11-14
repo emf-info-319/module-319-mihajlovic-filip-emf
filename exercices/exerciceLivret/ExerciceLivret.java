@@ -10,7 +10,9 @@ public class ExerciceLivret {
         int value2 = choisirUnNombre(MIN, MAX);
 
         String[] tableMultiple = construireTableMultiplication(value1, value2);
-
+        
+        //le commentaire ci-dessous est simplement le bout de code  permetant de résoudre la variante de l'exercice
+/*
         Scanner scanner = new Scanner(System.in);
         System.out.print("entrez une valeur entre 1 et " + value1 * value2 + ": ");
         int ligneChoisie = scanner.nextInt();
@@ -20,13 +22,13 @@ public class ExerciceLivret {
             ligneChoisie = scanner.nextInt();
         }
         System.out.println(tableMultiple[ligneChoisie - 1]);
-
-        /*
-         * System.out.println("Les chiffres sont : " + value1 + " " + value2 );
-         * for (int i = 0; i < tableMultiple.length; i++) {
-         * System.out.println(tableMultiple[i]);
-         * }
-         */
+ */
+        
+         System.out.println("Les chiffres sont : " + value1 + " " + value2 );
+         for (int i = 0; i < tableMultiple.length; i++) {
+         System.out.println(tableMultiple[i]);
+         }
+        
     }
 
     public static int choisirUnNombre(int min, int max) {
