@@ -10,11 +10,17 @@ public class Symphonie {
         return num;
     }
     
-    public static boolean estDièse(int note){
+    public static boolean estDièse(int num){
         boolean dièse = false;
-        if (note  ) {
-            
+        if (num == 1) {
+            dièse = true;
         }
         return dièse;
+    }
+
+    public static String creerLaPartition(String[] notes){
+        String partition ; 
+        partition 
+        return partition;
     }
 }
