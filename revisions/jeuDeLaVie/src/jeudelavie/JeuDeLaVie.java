@@ -7,26 +7,39 @@ public class JeuDeLaVie {
     //
     public final static int LARGEUR = 128;
     public final static int HAUTEUR = 128;
-    public final static int TAILLE_POINT_EN_PIXELS = 5;
+    public final static int TAILLE_POINT_EN_PIXELS = 3;
     public final static int FPS = 30;
 
     //
     // La méthode demandée pour créer notre plateau du "jeu de la vie"
     //
     public static boolean[][] plateauDuJeuDeLaVie_creer() {
-        return new boolean[HAUTEUR][LARGEUR];
+
+        //              )        (                 ) (           (         (
+        //           ( /(   *   ))\ )        (  ( /( )\ )        )\ )  (   )\ )
+        //     (   ( )\())` )  /(()/((       )\ )\()|()/(  (    (()/(  )\ (()/(
+        //     )\  )((_)\  ( )(_))(_))\    (((_|(_)\ /(_)) )\    /(_)|((_) /(_))
+        //    ((_)((_)((_)(_(_()|_))((_)   )\___ ((_|_))_ ((_)  (_)) )\___(_))
+        //    __   _____ _____ ___ ___    ___ ___  ___  ___   ___ ___ ___   _
+        //    \ \ / / _ \_   _| _ \ __|  / __/ _ \|   \| __| |_ _/ __|_ _| | |
+        //     \ V / (_) || | |   / _|  | (_| (_) | |) | _|   | | (__ | |  |_|
+        //      \_/ \___/ |_| |_|_\___|  \___\___/|___/|___| |___\___|___| (_)
     }
 
     //
     // La méthode demandée pour mettre un contenu aléatoire dans les cellules
     //
     public static void plateauDuJeuDeLaVie_contenuAleatoire(boolean[][] cells) {
-        // Initialisation avec des valeurs aléatoires
-        for (int x = 0; x < cells.length; x++) {
-            for (int y = 0; y < cells[0].length; y++) {
-                cells[x][y] = (Math.random() < 0.5);
-            }
-        }
+
+        //              )        (                 ) (           (         (
+        //           ( /(   *   ))\ )        (  ( /( )\ )        )\ )  (   )\ )
+        //     (   ( )\())` )  /(()/((       )\ )\()|()/(  (    (()/(  )\ (()/(
+        //     )\  )((_)\  ( )(_))(_))\    (((_|(_)\ /(_)) )\    /(_)|((_) /(_))
+        //    ((_)((_)((_)(_(_()|_))((_)   )\___ ((_|_))_ ((_)  (_)) )\___(_))
+        //    __   _____ _____ ___ ___    ___ ___  ___  ___   ___ ___ ___   _
+        //    \ \ / / _ \_   _| _ \ __|  / __/ _ \|   \| __| |_ _/ __|_ _| | |
+        //     \ V / (_) || | |   / _|  | (_| (_) | |) | _|   | | (__ | |  |_|
+        //      \_/ \___/ |_| |_|_\___|  \___\___/|___/|___| |___\___|___| (_)
     }
 
     //
@@ -34,56 +47,15 @@ public class JeuDeLaVie {
     //
     public static int nbreDeVoisins(boolean[][] cells, int x, int y) {
 
-        // Le nombre de voisins vivants (valeur initiale) de la cellule x/y
-        int voisins = 0;
-
-        // Les coordonnées x/y juste à gauche, juste à droite, juste au-dessus, juste en-dessous de x/y
-        int x_gauche = x - 1;
-        int x_droite = x + 1;
-        int y_haut = y - 1;
-        int y_bas = y + 1;
-
-        if (x_gauche < 0) {
-            x_gauche = cells.length - 1;
-        }
-        if (x_droite > (cells.length - 1)) {
-            x_droite = 0;
-        }
-
-        if (y_haut < 0) {
-            y_haut = cells[0].length - 1;
-        }
-        if (y_bas > (cells[0].length - 1)) {
-            y_bas = 0;
-        }
-
-        // Calcul du nombre de voisins
-        if (cells[x_gauche][y_haut]) {
-            voisins++;
-        }
-        if (cells[x_gauche][y]) {
-            voisins++;
-        }
-        if (cells[x_gauche][y_bas]) {
-            voisins++;
-        }
-        if (cells[x][y_haut]) {
-            voisins++;
-        }
-        if (cells[x][y_bas]) {
-            voisins++;
-        }
-        if (cells[x_droite][y_haut]) {
-            voisins++;
-        }
-        if (cells[x_droite][y]) {
-            voisins++;
-        }
-        if (cells[x_droite][y_bas]) {
-            voisins++;
-        }
-
-        return voisins;
+        //              )        (                 ) (           (         (
+        //           ( /(   *   ))\ )        (  ( /( )\ )        )\ )  (   )\ )
+        //     (   ( )\())` )  /(()/((       )\ )\()|()/(  (    (()/(  )\ (()/(
+        //     )\  )((_)\  ( )(_))(_))\    (((_|(_)\ /(_)) )\    /(_)|((_) /(_))
+        //    ((_)((_)((_)(_(_()|_))((_)   )\___ ((_|_))_ ((_)  (_)) )\___(_))
+        //    __   _____ _____ ___ ___    ___ ___  ___  ___   ___ ___ ___   _
+        //    \ \ / / _ \_   _| _ \ __|  / __/ _ \|   \| __| |_ _/ __|_ _| | |
+        //     \ V / (_) || | |   / _|  | (_| (_) | |) | _|   | | (__ | |  |_|
+        //      \_/ \___/ |_| |_|_\___|  \___\___/|___/|___| |___\___|___| (_)
     }
 
     //
@@ -91,28 +63,15 @@ public class JeuDeLaVie {
     //
     public static boolean[][] plateauDuJeuDeLaVie_calculerProchainEtat(boolean[][] cells) {
 
-        // On commence par créer le plateau contenant le nouvel état
-        boolean[][] newcells = new boolean[HAUTEUR][LARGEUR];
-
-        //  On traite chaque cellule afin de :
-        //    a) compter le nombre de voisins en vie puis
-        //    b) tuer ou donner vie selon les règles
-        for (int x = 0; x < cells.length; x++) {
-            for (int y = 0; y < cells[0].length; y++) {
-                // Combien de voisins en vie a-t-elle ?
-                int nbreVoisins = nbreDeVoisins(cells, x, y);
-                // Son état actuel est-il vivant ?
-                if (cells[x][y]) {
-                    // Va-t-elle le reste ?
-                    newcells[x][y] = (nbreVoisins == 2) || (nbreVoisins == 3);
-                } else {
-                    // La vie va-t-elle apparaître ?
-                    newcells[x][y] = (nbreVoisins == 3);
-                }
-            }
-        }
-
-        return newcells;
+        //              )        (                 ) (           (         (
+        //           ( /(   *   ))\ )        (  ( /( )\ )        )\ )  (   )\ )
+        //     (   ( )\())` )  /(()/((       )\ )\()|()/(  (    (()/(  )\ (()/(
+        //     )\  )((_)\  ( )(_))(_))\    (((_|(_)\ /(_)) )\    /(_)|((_) /(_))
+        //    ((_)((_)((_)(_(_()|_))((_)   )\___ ((_|_))_ ((_)  (_)) )\___(_))
+        //    __   _____ _____ ___ ___    ___ ___  ___  ___   ___ ___ ___   _
+        //    \ \ / / _ \_   _| _ \ __|  / __/ _ \|   \| __| |_ _/ __|_ _| | |
+        //     \ V / (_) || | |   / _|  | (_| (_) | |) | _|   | | (__ | |  |_|
+        //      \_/ \___/ |_| |_|_\___|  \___\___/|___/|___| |___\___|___| (_)
     }
 
     public static void main(String[] args) {
