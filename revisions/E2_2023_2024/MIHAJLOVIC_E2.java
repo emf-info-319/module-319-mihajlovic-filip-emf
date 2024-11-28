@@ -79,7 +79,7 @@ public class MIHAJLOVIC_E2 {
     public static int demanderNombre(Scanner scanner) {
         System.out.println("entrez un nombre entre 1 et " + MAX);
         int valeur = scanner.nextInt();
-        if (valeur < 1 || valeur > 3) {
+        while (valeur < 1 || valeur > 3) {
             System.out.println("entrez un nombre entre 1 et " + MAX);
             valeur = scanner.nextInt();
         }
